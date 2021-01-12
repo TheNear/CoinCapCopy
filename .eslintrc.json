@@ -35,6 +35,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "no-shadow": "off",
         "quotes": [
             "error",
             "double"
