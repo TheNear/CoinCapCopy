@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
+import { device } from "../../styles/breakpoints";
 import { containerPadding } from "../../styles/container";
-import { laptopHidden, tabletHidden } from "../../styles/media";
-import { ResponseHidden } from "../../types/responseTypes";
+import { laptopHidden, mobileHiddenL, tabletHidden, ResponseHidden } from "../../styles/media";
 
 // FIXME: Отрицательный маргин, можно ли избежать?
 export const CurrencyContainer = styled.div`
@@ -22,6 +22,10 @@ export const CurrencyTableWrap = styled.table`
   text-align: right;
   font-size: 1.4rem;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 15px -3px;
+
+  @media ${device.mobileL} {
+    font-size: 1.2rem;
+  }
 `;
 
 export const CurrencyTableHead = styled.thead`
@@ -53,6 +57,8 @@ export const CurrencyTableCellHead = styled.th<CurrencyTabelCellHeadProp>`
   text-align: ${({ align }) => align || "inherit"};
   ${({ tabletHide }) => tabletHide && tabletHidden};
   ${({ laptopHide }) => laptopHide && laptopHidden};
+  ${({ mobileHideL }) => mobileHideL && mobileHiddenL};
+
 
   &:hover {
     color: #242424;

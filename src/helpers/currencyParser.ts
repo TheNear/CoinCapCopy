@@ -1,4 +1,4 @@
-import { CurrencyData } from "../types/currencyResponse";
+import { CurrencyData } from "../types/apiResponses";
 import { getCoinIcon } from "./coinIconMap";
 
 // FIXME: Мы не всегда возвращаем валюту, знак валюты не нужен, + мы должны уметь указывать валюту

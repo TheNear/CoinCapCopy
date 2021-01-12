@@ -17,7 +17,7 @@ const CurrencyTable: React.FC = () => {
       <CurrencyTableWrap>
         <CurrencyTableHead>
           <CurrencyTableHeadRow>
-            <CurrencyTableCellHead align="center" active>
+            <CurrencyTableCellHead align="center" active mobileHideL>
               Rank
             </CurrencyTableCellHead>
             <CurrencyTableCellHead align="left">Name</CurrencyTableCellHead>
@@ -34,7 +34,7 @@ const CurrencyTable: React.FC = () => {
         </CurrencyTableHead>
         <CurrencyTableBody>
           {data.map((rowData) => (
-            <CurrencyTableRow data={rowData} />
+            <CurrencyTableRow key={rowData.symbol} data={rowData} />
           ))}
         </CurrencyTableBody>
       </CurrencyTableWrap>

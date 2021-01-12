@@ -1,5 +1,5 @@
 import React from "react";
-import { CurrencyData } from "../../types/currencyResponse";
+import { CurrencyData } from "../../types/apiResponses";
 import {
   CurrencyCurrencyImg,
   CurrencyCurrencyName,
@@ -30,7 +30,7 @@ const CurrencyTableRow: React.FC<CurrencyTableRowProp> = ({ data }) => {
 
   return (
     <CurrencyTableRowWrap>
-      <CurrencyTableCell align="center">{rank}</CurrencyTableCell>
+      <CurrencyTableCell align="center" mobileHideL>{rank}</CurrencyTableCell>
       <CurrencyTableCell align="left">
         <CurrencyCurrencyImg src={icon} />
         <CurrencyCurrencyName>

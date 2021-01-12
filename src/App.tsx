@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  AppContainer,
-  Main,
-} from "./AppStyle";
+import { AppContainer, Main } from "./AppStyle";
 import { Header } from "./components/Header/Header";
 import { CurrencyList } from "./pages/CurrencyList/CurrencyList";
 

@@ -12,3 +12,14 @@ export const laptopHidden = css`
     display: none;
   }
 `;
+
+export const mobileHiddenL = css`
+  @media ${device.mobileL} {
+    display: none;
+  }
+`;
+export interface ResponseHidden {
+  tabletHide?: boolean,
+  laptopHide?: boolean,
+  mobileHideL?: boolean,
+}
