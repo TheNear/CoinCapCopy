@@ -39,10 +39,10 @@ const CurrencyTableRow: React.FC<CurrencyTableRowProp> = ({ data }) => {
         </CurrencyCurrencyName>
       </CurrencyTableCell>
       <CurrencyTableCell>{price}</CurrencyTableCell>
-      <CurrencyTableCell>{marketCap}</CurrencyTableCell>
-      <CurrencyTableCell>{vwap24h}</CurrencyTableCell>
-      <CurrencyTableCell>{supply}</CurrencyTableCell>
-      <CurrencyTableCell>{volume24h}</CurrencyTableCell>
+      <CurrencyTableCell tabletHide>{marketCap}</CurrencyTableCell>
+      <CurrencyTableCell laptopHide>{vwap24h}</CurrencyTableCell>
+      <CurrencyTableCell laptopHide>{supply}</CurrencyTableCell>
+      <CurrencyTableCell tabletHide>{volume24h}</CurrencyTableCell>
       <CurrencyTableCell positive={positive}>{percent}</CurrencyTableCell>
     </CurrencyTableRowWrap>
   );

@@ -1,6 +1,7 @@
 import { CurrencyData } from "../types/currencyResponse";
 import { getCoinIcon } from "./coinIconMap";
 
+// FIXME: Мы не всегда возвращаем валюту, знак валюты не нужен, + мы должны уметь указывать валюту
 export const getParsedCurrency = (value?: string | null): string => {
   if (!value) return "-";
   const num = parseFloat(value);

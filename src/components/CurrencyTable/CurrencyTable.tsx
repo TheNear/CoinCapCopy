@@ -9,6 +9,7 @@ import {
 } from "./CurrencyTableStyle";
 import { CurrencyTableRow } from "../CurrencyTableRow/CurrencyTableRow";
 import { data } from "../../mocks/data.json";
+import { SmallHidden } from "../../styles/container";
 
 const CurrencyTable: React.FC = () => {
   return (
@@ -21,19 +22,20 @@ const CurrencyTable: React.FC = () => {
             </CurrencyTableCellHead>
             <CurrencyTableCellHead align="left">Name</CurrencyTableCellHead>
             <CurrencyTableCellHead>Price</CurrencyTableCellHead>
-            <CurrencyTableCellHead>Market Cap</CurrencyTableCellHead>
-            <CurrencyTableCellHead>VWAP (24hr)</CurrencyTableCellHead>
-            <CurrencyTableCellHead>Supply</CurrencyTableCellHead>
-            <CurrencyTableCellHead>Volume (24hr)</CurrencyTableCellHead>
-            <CurrencyTableCellHead>Change (24hr)</CurrencyTableCellHead>
+            <CurrencyTableCellHead tabletHide>Market Cap</CurrencyTableCellHead>
+            <CurrencyTableCellHead laptopHide>VWAP (24hr)</CurrencyTableCellHead>
+            <CurrencyTableCellHead laptopHide>Supply</CurrencyTableCellHead>
+            <CurrencyTableCellHead tabletHide>Volume (24hr)</CurrencyTableCellHead>
+            <CurrencyTableCellHead>
+              <SmallHidden>Change</SmallHidden>
+              (24hr)
+            </CurrencyTableCellHead>
           </CurrencyTableHeadRow>
         </CurrencyTableHead>
         <CurrencyTableBody>
-          {
-            data.map((rowData) => (
-              <CurrencyTableRow data={rowData} />
-            ))
-          }
+          {data.map((rowData) => (
+            <CurrencyTableRow data={rowData} />
+          ))}
         </CurrencyTableBody>
       </CurrencyTableWrap>
     </CurrencyContainer>

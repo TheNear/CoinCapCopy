@@ -1,4 +1,6 @@
 import styled from "styled-components/macro";
+import { laptopHidden, tabletHidden } from "../../styles/media";
+import { ResponseHidden } from "../../types/responseTypes";
 
 interface TableAlignProps {
   align?: "left" | "center" | "right";
@@ -16,9 +18,9 @@ export const CurrencyTableRowWrap = styled.tr<TableAlignProps>`
   }
 `;
 
-interface CurrencyTableCellProps extends TableAlignProps {
-  positive?: "up" | "down",
-}
+type CurrencyTableCellProps = {
+  positive?: "up" | "down";
+} & TableAlignProps & ResponseHidden;
 
 export const CurrencyTableCell = styled.td<CurrencyTableCellProps>`
   border-top: 1px solid rgba(34, 36, 38, 0.1);
@@ -35,7 +37,10 @@ export const CurrencyTableCell = styled.td<CurrencyTableCellProps>`
       default:
         return "inherit";
     }
-  }}
+  }};
+
+  ${({ tabletHide }) => tabletHide && tabletHidden};
+  ${({ laptopHide }) => laptopHide && laptopHidden};
 `;
 
 export const CurrencyCurrencyImg = styled.img`

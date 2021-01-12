@@ -1,9 +1,14 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
+import { containerPadding } from "../../styles/container";
+import { laptopHidden, tabletHidden } from "../../styles/media";
+import { ResponseHidden } from "../../types/responseTypes";
 
 // FIXME: Отрицательный маргин, можно ли избежать?
 export const CurrencyContainer = styled.div`
   margin-top: -120px;
-  padding: 1rem 9%;
+  ${containerPadding}
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 `;
 
 export const CurrencyTableWrap = styled.table`
@@ -34,17 +39,20 @@ export const CurrencyTableHeadRow = styled.tr<TableAlignProps>`
   text-align: ${({ align }) => align || "inherit"};
   white-space: nowrap;
   cursor: pointer;
+
 `;
 
-export interface CurrencyTabelCellHeadProp extends TableAlignProps {
+type CurrencyTabelCellHeadProp = {
   active?: boolean;
-}
+} & TableAlignProps & ResponseHidden;
 
 export const CurrencyTableCellHead = styled.th<CurrencyTabelCellHeadProp>`
   color: ${({ active }) => (active ? "inherit" : "#686868")};
   font-weight: inherit;
   padding: 1.1rem 0.9rem;
   text-align: ${({ align }) => align || "inherit"};
+  ${({ tabletHide }) => tabletHide && tabletHidden};
+  ${({ laptopHide }) => laptopHide && laptopHidden};
 
   &:hover {
     color: #242424;

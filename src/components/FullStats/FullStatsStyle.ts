@@ -1,9 +1,11 @@
 import styled from "styled-components/macro";
+import { containerPadding } from "../../styles/container";
 
 // FIXME: Объеденить magrin-top с высотой хедера
 // FIXME: Можно ли что-нибудь придумать с padding-bottom?
 export const FullStatsContainer = styled.div`
-  padding: 0 10% 120px;
+  ${containerPadding};
+  padding-bottom: 120px;
   background: linear-gradient(to right, rgb(63, 81, 181), rgb(100, 181, 246)) rgb(255, 255, 255);
 `;
 
