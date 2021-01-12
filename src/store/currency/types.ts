@@ -3,10 +3,12 @@ import { InferValueTypes } from "../../types/redux";
 import * as actions from "./action";
 
 export enum CurrencyActionTypes {
-  FETCH_CURRENCY_DATA = "users/FETCH_CURRENCY_DATA",
-  SET_CURRENCY_DATA = "users/SET_CURRENCY_DATA",
-  SET_SORT_TYPE = "users/SET_SORT_TYPE",
-  CHANGE_SORT_DIRECTION = "users/CHANGE_SORT_DIRECTION",
+  FETCH_CURRENCY_DATA = "currency/FETCH_CURRENCY_DATA",
+  SET_CURRENCY_DATA = "currency/SET_CURRENCY_DATA",
+  SET_SORT_TYPE = "currency/SET_SORT_TYPE",
+  SET_MAX_PAGE = "currency/SET_MAX_PAGE",
+  CHANGE_VIEW_PAGE = "currency/CHANGE_VIEW_PAGE",
+  CHANGE_SORT_DIRECTION = "currency/CHANGE_SORT_DIRECTION",
 }
 
 export enum PossibleSortTypes {
@@ -25,6 +27,9 @@ export interface CurrencyInitialState {
   readonly data: CurrencyData[],
   readonly sortType: PossibleSortTypes,
   readonly sortAZ: boolean,
+  readonly page: number,
+  readonly maxPage: number,
+  readonly pageCapacity: number,
 }
 
 export type CurrencyActions = ReturnType<InferValueTypes<typeof actions>>;

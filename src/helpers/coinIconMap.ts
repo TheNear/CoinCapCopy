@@ -24,6 +24,36 @@ import xmr from "../assets/img/coin/xmr.png";
 import xrp from "../assets/img/coin/xrp.png";
 import xtz from "../assets/img/coin/xtz.png";
 import xlm from "../assets/img/coin/xlm.png";
+import miota from "../assets/img/coin/miota.png";
+import dash from "../assets/img/coin/dash.png";
+import btg from "../assets/img/coin/btg.png";
+import omg from "../assets/img/coin/omg.png";
+import qtum from "../assets/img/coin/qtum.png";
+import zec from "../assets/img/coin/zec.png";
+import etc from "../assets/img/coin/etc.png";
+import zrx from "../assets/img/coin/zrx.png";
+import ae from "../assets/img/coin/ae.png";
+import bts from "../assets/img/coin/bts.png";
+import dcr from "../assets/img/coin/dcr.png";
+import dgb from "../assets/img/coin/dgb.png";
+import icx from "../assets/img/coin/icx.png";
+import ont from "../assets/img/coin/ont.png";
+import zil from "../assets/img/coin/zil.png";
+import atom from "../assets/img/coin/atom.png";
+import dai from "../assets/img/coin/dai.png";
+import doge from "../assets/img/coin/doge.png";
+import leo from "../assets/img/coin/leo.png";
+import rep from "../assets/img/coin/rep.png";
+import steem from "../assets/img/coin/steem.png";
+import uni from "../assets/img/coin/uni.png";
+import cel from "../assets/img/coin/cel.png";
+import busd from "../assets/img/coin/busd.png";
+import comp from "../assets/img/coin/comp.png";
+import fil from "../assets/img/coin/fil.png";
+import ftt from "../assets/img/coin/ftt.png";
+import ht from "../assets/img/coin/ht.png";
+import sushi from "../assets/img/coin/sushi.png";
+import yfi from "../assets/img/coin/yfi.png";
 import logomark from "../assets/img/coin/logomark.png";
 
 type CoinIconMapType = {
@@ -31,6 +61,37 @@ type CoinIconMapType = {
 }
 
 export const coinIconMap: CoinIconMapType = {
+  YFI: yfi,
+  SUSHI: sushi,
+  HT: ht,
+  FTT: ftt,
+  COMP: comp,
+  FIL: fil,
+  BUSD: busd,
+  CEL: cel,
+  UNI: uni,
+  STEEM: steem,
+  REP: rep,
+  LEO: leo,
+  DOGE: doge,
+  DAI: dai,
+  ATOM: atom,
+  ZIL: zil,
+  ONT: ont,
+  ICX: icx,
+  DGB: dgb,
+  DCR: dcr,
+  BTS: bts,
+  AE: ae,
+  ZRX: zrx,
+  ZEC: zec,
+  QTUM: qtum,
+  OMG: omg,
+  BTG: btg,
+  BNB: bnb,
+  ETC: etc,
+  DASH: dash,
+  MIOTA: miota,
   BTC: btc,
   ETH: eth,
   XRP: xrp,

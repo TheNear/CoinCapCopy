@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import {
   CurrencyContainer,
   CurrencyTableBody,
@@ -8,10 +9,14 @@ import {
   CurrencyTableWrap,
 } from "./CurrencyTableStyle";
 import { CurrencyTableRow } from "../CurrencyTableRow/CurrencyTableRow";
-import { data } from "../../mocks/data.json";
+// import { data } from "../../mocks/data.json";
 import { SmallHidden } from "../../styles/container";
+import { getCurrencyListPart } from "../../store/currency/selector";
+import { TableMoreButton } from "../TableMoreButton/TableMoreButton";
 
 const CurrencyTable: React.FC = () => {
+  const currencyList = useSelector(getCurrencyListPart);
+
   return (
     <CurrencyContainer>
       <CurrencyTableWrap>
@@ -33,11 +38,12 @@ const CurrencyTable: React.FC = () => {
           </CurrencyTableHeadRow>
         </CurrencyTableHead>
         <CurrencyTableBody>
-          {data.map((rowData) => (
+          {currencyList.map((rowData) => (
             <CurrencyTableRow key={rowData.symbol} data={rowData} />
           ))}
         </CurrencyTableBody>
       </CurrencyTableWrap>
+      <TableMoreButton />
     </CurrencyContainer>
   );
 };

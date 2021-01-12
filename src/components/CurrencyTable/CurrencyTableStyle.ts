@@ -5,6 +5,10 @@ import { laptopHidden, mobileHiddenL, tabletHidden, ResponseHidden } from "../..
 
 // FIXME: Отрицательный маргин, можно ли избежать?
 export const CurrencyContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-top: -120px;
   ${containerPadding}
   padding-top: 1rem;

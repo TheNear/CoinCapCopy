@@ -4,6 +4,7 @@ import { containerPadding } from "../../styles/container";
 
 // FIXME: Объеденить magrin-top с высотой хедера
 // FIXME: Можно ли что-нибудь придумать с padding-bottom?
+// FIXME: Градиент такой в нескольких местах
 export const FullStatsContainer = styled.div`
   ${containerPadding};
   padding-bottom: 120px;
