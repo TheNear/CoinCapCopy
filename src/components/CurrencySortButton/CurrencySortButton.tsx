@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeSortDirection, setSortType } from "../../store/currency/action";
-import { getSortDirection, getSortType } from "../../store/currency/selector";
+import { isSortDirectonToLow, getSortType } from "../../store/currency/selector";
 import { PossibleSortTypes } from "../../store/currency/types";
 import { SortButtonDirection, SortButtonType, SortButtonWrapper } from "./CurrencySortButtonStyle";
 
@@ -11,7 +11,7 @@ export interface CurrencySortButtonProps {
 
 const CurrencySortButton: React.FC<CurrencySortButtonProps> = ({ children, sortType }) => {
   const dispatch = useDispatch();
-  const sortDirection = useSelector(getSortDirection);
+  const sortDirection = useSelector(isSortDirectonToLow);
   const activeSortType = useSelector(getSortType);
 
   const changeSortTypeHandler = () => {
