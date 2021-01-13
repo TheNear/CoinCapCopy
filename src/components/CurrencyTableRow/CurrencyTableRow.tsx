@@ -1,5 +1,5 @@
 import React from "react";
-import { CurrencyData } from "../../types/apiResponses";
+import { CurrencyData } from "../../api/types";
 import {
   CurrencyCurrencyImg,
   CurrencyCurrencyName,

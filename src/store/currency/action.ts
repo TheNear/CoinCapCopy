@@ -1,4 +1,4 @@
-import { CurrencyData } from "../../types/apiResponses";
+import { CurrencyData } from "../../api/types";
 import { CurrencyActionTypes } from "./types";
 
 export const setCurrencyData = (data: CurrencyData[]) => ({

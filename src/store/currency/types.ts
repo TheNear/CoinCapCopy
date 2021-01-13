@@ -1,4 +1,4 @@
-import { CurrencyData } from "../../types/apiResponses";
+import { CurrencyData } from "../../api/types";
 import { InferValueTypes } from "../../types/redux";
 import * as actions from "./action";
 

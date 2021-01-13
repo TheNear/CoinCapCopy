@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
-import { URLS, URLSType } from "../assets/js/constants";
-import { CurrencyRespone } from "../types/apiResponses";
+import { URLS, URLSType } from "./constants";
+import { CurrencyRespone } from "./types";
 
 export const test = "32";
 

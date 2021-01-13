@@ -1,5 +1,5 @@
 import { put, select, takeEvery } from "redux-saga/effects";
-import { api } from "../../helpers/services";
+import { api } from "../../api/services";
 // import { CurrencyData } from "../../types/apiResponses";
 import { ActionTypes } from "../../types/redux";
 import { setCurrencyData, setMaxPage } from "./action";

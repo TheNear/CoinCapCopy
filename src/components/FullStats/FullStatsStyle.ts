@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 import { device } from "../../styles/breakpoints";
-import { containerPadding } from "../../styles/container";
+import { containerPadding, containerSize } from "../../styles/container";
 
 // FIXME: Объеденить magrin-top с высотой хедера
 // FIXME: Можно ли что-нибудь придумать с padding-bottom?
@@ -16,6 +16,7 @@ interface FullStatsListProp {
 }
 
 export const FullStatsList = styled.ul<FullStatsListProp>`
+  ${containerSize};
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

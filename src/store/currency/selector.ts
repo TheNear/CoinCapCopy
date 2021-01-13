@@ -1,5 +1,5 @@
 import { createSelector } from "reselect";
-import { CurrencyData } from "../../types/apiResponses";
+import { CurrencyData } from "../../api/types";
 import { RootState } from "../../types/redux";
 
 export const getCurrencyList = (state: RootState): CurrencyData[] => state.currency.data;
