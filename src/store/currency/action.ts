@@ -1,5 +1,5 @@
 import { CurrencyData } from "../../api/types";
-import { CurrencyActionTypes } from "./types";
+import { CurrencyActionTypes, PossibleSortTypes } from "./types";
 
 export const setCurrencyData = (data: CurrencyData[]) => ({
   type: CurrencyActionTypes.SET_CURRENCY_DATA,
@@ -17,4 +17,13 @@ export const setMaxPage = (pageCounts: number) => ({
 
 export const changePage = () => ({
   type: CurrencyActionTypes.CHANGE_VIEW_PAGE,
+} as const);
+
+export const setSortType = (sortType: PossibleSortTypes) => ({
+  type: CurrencyActionTypes.SET_SORT_TYPE,
+  payload: sortType,
+} as const);
+
+export const changeSortDirection = () => ({
+  type: CurrencyActionTypes.CHANGE_SORT_DIRECTION,
 } as const);

@@ -16,7 +16,7 @@ export enum PossibleSortTypes {
   BY_RANK = "BY_RANK",
   BY_NAME = "BY_NAME",
   BY_PRICE = "BY_PRICE",
-  BY_MARKETCUP = "BY_MARKET_CUP",
+  BY_MARKETCAP = "BY_MARKET_CAP",
   BY_VWAP = "BY_VWAP",
   BY_SUPPLY = "BY_SUPPLY",
   BY_VOLUME = "BY_VOLUME",

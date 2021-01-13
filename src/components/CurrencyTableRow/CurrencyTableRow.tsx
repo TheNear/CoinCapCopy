@@ -27,6 +27,7 @@ const CurrencyTableRow: React.FC<CurrencyTableRowProp> = ({ data }) => {
     volume24h,
     vwap24h,
   } = getParsedData(data);
+  console.log("RENDER");
 
   return (
     <CurrencyTableRowWrap>

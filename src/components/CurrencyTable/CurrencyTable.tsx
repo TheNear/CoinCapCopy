@@ -13,6 +13,8 @@ import { CurrencyTableRow } from "../CurrencyTableRow/CurrencyTableRow";
 import { SmallHidden } from "../../styles/container";
 import { getCurrencyListPart } from "../../store/currency/selector";
 import { TableMoreButton } from "../TableMoreButton/TableMoreButton";
+import { CurrencySortButton } from "../CurrencySortButton/CurrencySortButton";
+import { PossibleSortTypes } from "../../store/currency/types";
 
 const CurrencyTable: React.FC = () => {
   const currencyList = useSelector(getCurrencyListPart);
@@ -22,18 +24,38 @@ const CurrencyTable: React.FC = () => {
       <CurrencyTableWrap>
         <CurrencyTableHead>
           <CurrencyTableHeadRow>
-            <CurrencyTableCellHead align="center" active mobileHideL>
-              Rank
+            <CurrencyTableCellHead align="center" mobileHideL>
+              <CurrencySortButton sortType={PossibleSortTypes.BY_RANK}>Rank</CurrencySortButton>
             </CurrencyTableCellHead>
-            <CurrencyTableCellHead align="left">Name</CurrencyTableCellHead>
-            <CurrencyTableCellHead>Price</CurrencyTableCellHead>
-            <CurrencyTableCellHead tabletHide>Market Cap</CurrencyTableCellHead>
-            <CurrencyTableCellHead laptopHide>VWAP (24hr)</CurrencyTableCellHead>
-            <CurrencyTableCellHead laptopHide>Supply</CurrencyTableCellHead>
-            <CurrencyTableCellHead tabletHide>Volume (24hr)</CurrencyTableCellHead>
+            <CurrencyTableCellHead align="left">
+              <CurrencySortButton sortType={PossibleSortTypes.BY_NAME}>Name</CurrencySortButton>
+            </CurrencyTableCellHead>
             <CurrencyTableCellHead>
-              <SmallHidden>Change</SmallHidden>
-              (24hr)
+              <CurrencySortButton sortType={PossibleSortTypes.BY_PRICE}>Price</CurrencySortButton>
+            </CurrencyTableCellHead>
+            <CurrencyTableCellHead tabletHide>
+              <CurrencySortButton sortType={PossibleSortTypes.BY_MARKETCAP}>
+                Market Cap
+              </CurrencySortButton>
+            </CurrencyTableCellHead>
+            <CurrencyTableCellHead laptopHide>
+              <CurrencySortButton sortType={PossibleSortTypes.BY_VWAP}>
+                VWAP (24hr)
+              </CurrencySortButton>
+            </CurrencyTableCellHead>
+            <CurrencyTableCellHead laptopHide>
+              <CurrencySortButton sortType={PossibleSortTypes.BY_SUPPLY}>Supply</CurrencySortButton>
+            </CurrencyTableCellHead>
+            <CurrencyTableCellHead tabletHide>
+              <CurrencySortButton sortType={PossibleSortTypes.BY_VOLUME}>
+                Volume (24hr)
+              </CurrencySortButton>
+            </CurrencyTableCellHead>
+            <CurrencyTableCellHead>
+              <CurrencySortButton sortType={PossibleSortTypes.BY_CHANGE}>
+                <SmallHidden>Change</SmallHidden>
+                (24hr)
+              </CurrencySortButton>
             </CurrencyTableCellHead>
           </CurrencyTableHeadRow>
         </CurrencyTableHead>

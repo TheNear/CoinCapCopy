@@ -51,12 +51,10 @@ export const CurrencyTableHeadRow = styled.tr<TableAlignProps>`
 
 `;
 
-type CurrencyTabelCellHeadProp = {
-  active?: boolean;
-} & TableAlignProps & ResponseHidden;
+type CurrencyTabelCellHeadProp = TableAlignProps & ResponseHidden;
 
 export const CurrencyTableCellHead = styled.th<CurrencyTabelCellHeadProp>`
-  color: ${({ active }) => (active ? "inherit" : "#686868")};
+  color: #686868;
   font-weight: inherit;
   padding: 1.1rem 0.9rem;
   text-align: ${({ align }) => align || "inherit"};

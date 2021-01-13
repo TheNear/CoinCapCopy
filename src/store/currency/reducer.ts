@@ -39,6 +39,17 @@ export const currencyReducer = (
         page: newPage > state.maxPage ? 1 : newPage,
       };
     }
+    case CurrencyActionTypes.SET_SORT_TYPE:
+      return {
+        ...state,
+        sortAZ: true,
+        sortType: state.sortType === action.payload ? PossibleSortTypes.NOT_SORTED : action.payload,
+      };
+    case CurrencyActionTypes.CHANGE_SORT_DIRECTION:
+      return {
+        ...state,
+        sortAZ: !state.sortAZ,
+      };
     default:
       return state;
   }

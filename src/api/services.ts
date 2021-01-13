@@ -26,7 +26,6 @@ class ApiService {
   }
 
   public async getCurrencyList() {
-    console.log(this.CURRENCY_URL);
     const { data } = await ApiService.get<CurrencyRespone>(this.CURRENCY_URL, this.axiosOption);
     return data;
   }
