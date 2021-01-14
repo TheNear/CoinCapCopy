@@ -1,4 +1,4 @@
-import { CurrencyData } from "../../api/types";
+import { CurrencyData, SocketCurrencyResonpse } from "../../api/types";
 import { CurrencyActionTypes, PossibleSortTypes } from "./types";
 
 export const setCurrencyData = (data: CurrencyData[]) => ({
@@ -26,4 +26,9 @@ export const setSortType = (sortType: PossibleSortTypes) => ({
 
 export const changeSortDirection = () => ({
   type: CurrencyActionTypes.CHANGE_SORT_DIRECTION,
+} as const);
+
+export const setNewPrices = (newPrices: SocketCurrencyResonpse) => ({
+  type: CurrencyActionTypes.SET_NEW_PRICES,
+  payload: newPrices,
 } as const);

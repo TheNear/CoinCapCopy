@@ -14,12 +14,18 @@ interface SortButtonTypeProps {
 export const SortButtonType = styled.button<SortButtonTypeProps>`
   font-family: inherit;
   font-size: inherit;
+  flex-grow: 1;
   border: none;
   background-color: transparent;
   text-transform: inherit;
   font-weight: inherit;
   cursor: pointer;
-  color: ${({ theme, active }) => (active ? theme.mainColor : "inherit")};
+  color: ${({ active }) => (active ? "#51b1f0" : "inherit")};
+
+
+  &:hover {
+    color: #242424;
+  }
 
   :focus {
     outline: none;

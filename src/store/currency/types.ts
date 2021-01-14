@@ -7,6 +7,7 @@ export enum CurrencyActionTypes {
   SET_CURRENCY_DATA = "currency/SET_CURRENCY_DATA",
   SET_SORT_TYPE = "currency/SET_SORT_TYPE",
   SET_MAX_PAGE = "currency/SET_MAX_PAGE",
+  SET_NEW_PRICES = "currency/SET_NEW_PRICES",
   CHANGE_VIEW_PAGE = "currency/CHANGE_VIEW_PAGE",
   CHANGE_SORT_DIRECTION = "currency/CHANGE_SORT_DIRECTION",
 }

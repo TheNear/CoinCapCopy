@@ -1,26 +1,81 @@
-import styled from "styled-components/macro";
+import styled, { keyframes, css } from "styled-components/macro";
 import { device } from "../../styles/breakpoints";
 import { laptopHidden, mobileHiddenL, tabletHidden, ResponseHidden } from "../../styles/media";
+
+// TODO: отрефакторить
+const alertBad = keyframes`
+  0%: {
+    background-color: inherit;
+  }
+
+  50% {
+    background-color: #FFDBDA;
+  }
+
+  100%: {
+    background-color: inherit;
+  }
+`;
+
+const alertGood = keyframes`
+0%: {
+  background-color: inherit;
+}
+
+50% {
+  background-color: #CFF4E8;
+}
+
+100%: {
+  background-color: inherit;
+}
+`;
+
+const goodAnimation = css`
+  animation: ${alertGood} 1.5s ease;
+`;
+
+const badAnimation = css`
+  animation: ${alertBad} 1.5s ease;
+`;
 
 interface TableAlignProps {
   align?: "left" | "center" | "right";
 }
 
-export const CurrencyTableRowWrap = styled.tr<TableAlignProps>`
+interface CurrencyTableRowWrapProp extends TableAlignProps {
+  changeValue?: boolean;
+}
+
+export const CurrencyTableRowWrap = styled.tr<CurrencyTableRowWrapProp>`
   font-weight: inherit;
   text-align: ${({ align }) => align || "inherit"};
   white-space: nowrap;
   cursor: pointer;
-  transition: background-color 0.4s ease;
+  transition: background-color 1s ease;
 
   &:hover {
     background-color: #eaeaea;
   }
+
+  ${({ changeValue }) => {
+    switch (changeValue) {
+      case undefined:
+        return "";
+      case true:
+        return goodAnimation;
+      case false:
+        return badAnimation;
+      default:
+        return "";
+    }
+  }}
 `;
 
 type CurrencyTableCellProps = {
   positive?: "up" | "down";
-} & TableAlignProps & ResponseHidden;
+} & TableAlignProps &
+  ResponseHidden;
 
 export const CurrencyTableCell = styled.td<CurrencyTableCellProps>`
   border-top: 1px solid rgba(34, 36, 38, 0.1);
@@ -63,7 +118,7 @@ export const CurrencyCurrencyName = styled.a`
   display: inline-block;
 
   @media ${device.mobileL} {
-    font-size: 1.2rem
+    font-size: 1.2rem;
   }
 `;
 
@@ -74,6 +129,6 @@ export const CurrencyCurrencyShort = styled.span`
   display: block;
 
   @media ${device.mobileL} {
-    font-size: 1rem
+    font-size: 1rem;
   }
 `;

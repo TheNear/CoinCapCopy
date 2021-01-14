@@ -61,11 +61,6 @@ export const CurrencyTableCellHead = styled.th<CurrencyTabelCellHeadProp>`
   ${({ tabletHide }) => tabletHide && tabletHidden};
   ${({ laptopHide }) => laptopHide && laptopHidden};
   ${({ mobileHideL }) => mobileHideL && mobileHiddenL};
-
-
-  &:hover {
-    color: #242424;
-  }
 `;
 
 export const CurrencyTableBody = styled.tbody``;

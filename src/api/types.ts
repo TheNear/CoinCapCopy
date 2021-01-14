@@ -16,3 +16,7 @@ export interface CurrencyRespone {
   data: CurrencyData[],
   timestamp: string,
 }
+
+export interface SocketCurrencyResonpse {
+  [key: string]: string,
+}

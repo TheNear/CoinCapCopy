@@ -39,17 +39,32 @@ export const currencyReducer = (
         page: newPage > state.maxPage ? 1 : newPage,
       };
     }
-    case CurrencyActionTypes.SET_SORT_TYPE:
+    case CurrencyActionTypes.SET_SORT_TYPE: {
       return {
         ...state,
         sortAZ: true,
         sortType: state.sortType === action.payload ? PossibleSortTypes.NOT_SORTED : action.payload,
       };
-    case CurrencyActionTypes.CHANGE_SORT_DIRECTION:
+    }
+    case CurrencyActionTypes.CHANGE_SORT_DIRECTION: {
       return {
         ...state,
         sortAZ: !state.sortAZ,
       };
+    }
+    case CurrencyActionTypes.SET_NEW_PRICES: {
+      return {
+        ...state,
+        data: state.data.map((item) => {
+          const newPrice = action.payload[item.id];
+          if (!newPrice) return item;
+          return {
+            ...item,
+            priceUsd: newPrice,
+          };
+        }),
+      };
+    }
     default:
       return state;
   }

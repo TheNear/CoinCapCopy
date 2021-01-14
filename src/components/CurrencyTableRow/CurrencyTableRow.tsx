@@ -8,12 +8,13 @@ import {
   CurrencyTableRowWrap,
 } from "./CurrencyTableRowStyle";
 import { getParsedData } from "../../helpers/currencyParser";
+import { usePrevious } from "../../hooks/usePrevious";
 
 export interface CurrencyTableRowProp {
   data: CurrencyData;
 }
 
-const CurrencyTableRow: React.FC<CurrencyTableRowProp> = ({ data }) => {
+const CurrencyTableRow: React.FC<CurrencyTableRowProp> = React.memo(({ data }) => {
   const {
     icon,
     marketCap,
@@ -27,11 +28,13 @@ const CurrencyTableRow: React.FC<CurrencyTableRowProp> = ({ data }) => {
     volume24h,
     vwap24h,
   } = getParsedData(data);
-  console.log("RENDER");
-
+  const prevPrice = usePrevious<string>(data.priceUsd);
+  console.log(prevPrice);
   return (
-    <CurrencyTableRowWrap>
-      <CurrencyTableCell align="center" mobileHideL>{rank}</CurrencyTableCell>
+    <CurrencyTableRowWrap changeValue={prevPrice ? +prevPrice < +data.priceUsd : undefined}>
+      <CurrencyTableCell align="center" mobileHideL>
+        {rank}
+      </CurrencyTableCell>
       <CurrencyTableCell align="left">
         <CurrencyCurrencyImg src={icon} />
         <CurrencyCurrencyName>
@@ -47,6 +50,8 @@ const CurrencyTableRow: React.FC<CurrencyTableRowProp> = ({ data }) => {
       <CurrencyTableCell positive={positive}>{percent}</CurrencyTableCell>
     </CurrencyTableRowWrap>
   );
-};
+}, (prevProps, nextProps) => {
+  return prevProps.data.priceUsd === nextProps.data.priceUsd;
+});
 
 export { CurrencyTableRow };
