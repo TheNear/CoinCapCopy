@@ -1,1 +1,1 @@
-export const CURRENCY_PER_PAGE = 3;
+export const CURRENCY_PER_PAGE = 30;

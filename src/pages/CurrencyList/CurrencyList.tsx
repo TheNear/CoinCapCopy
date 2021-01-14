@@ -11,6 +11,23 @@ const CurrencyList: React.FC = () => {
 
   useEffect(() => {
     dispatch(fetchCurrencyData());
+    /*
+    const ws = new WebSocket("wss://ws.coincap.io/prices?assets=ALL");
+    ws.onopen = () => {
+      console.log("WS OPEN");
+    };
+
+    ws.onmessage = (evt) => {
+      const message = JSON.parse(evt.data);
+      console.log(message);
+    };
+
+    ws.onclose = () => {
+      console.log("WS CLOSE");
+    };
+
+    ws.close();
+    */
   }, [dispatch]);
 
   return (
