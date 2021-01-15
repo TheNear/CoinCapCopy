@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/CoinCapCopy/static/css/main.c954ed45.chunk.css",
-    "main.js": "/CoinCapCopy/static/js/main.2e1d3938.chunk.js",
-    "main.js.map": "/CoinCapCopy/static/js/main.2e1d3938.chunk.js.map",
-    "runtime-main.js": "/CoinCapCopy/static/js/runtime-main.22b36c0c.js",
-    "runtime-main.js.map": "/CoinCapCopy/static/js/runtime-main.22b36c0c.js.map",
-    "static/js/2.0fe10a42.chunk.js": "/CoinCapCopy/static/js/2.0fe10a42.chunk.js",
-    "static/js/2.0fe10a42.chunk.js.map": "/CoinCapCopy/static/js/2.0fe10a42.chunk.js.map",
+    "main.js": "/CoinCapCopy/static/js/main.2e1bebc2.chunk.js",
+    "main.js.map": "/CoinCapCopy/static/js/main.2e1bebc2.chunk.js.map",
+    "runtime-main.js": "/CoinCapCopy/static/js/runtime-main.5a117edf.js",
+    "runtime-main.js.map": "/CoinCapCopy/static/js/runtime-main.5a117edf.js.map",
+    "static/js/2.909e628f.chunk.js": "/CoinCapCopy/static/js/2.909e628f.chunk.js",
+    "static/js/2.909e628f.chunk.js.map": "/CoinCapCopy/static/js/2.909e628f.chunk.js.map",
     "index.html": "/CoinCapCopy/index.html",
     "static/css/main.c954ed45.chunk.css.map": "/CoinCapCopy/static/css/main.c954ed45.chunk.css.map",
-    "static/js/2.0fe10a42.chunk.js.LICENSE.txt": "/CoinCapCopy/static/js/2.0fe10a42.chunk.js.LICENSE.txt",
+    "static/js/2.909e628f.chunk.js.LICENSE.txt": "/CoinCapCopy/static/js/2.909e628f.chunk.js.LICENSE.txt",
     "static/media/black.c7be6b47.svg": "/CoinCapCopy/static/media/black.c7be6b47.svg",
     "static/media/bsv.f59fae0f.png": "/CoinCapCopy/static/media/bsv.f59fae0f.png",
     "static/media/link.0cc7c41d.png": "/CoinCapCopy/static/media/link.0cc7c41d.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.22b36c0c.js",
-    "static/js/2.0fe10a42.chunk.js",
+    "static/js/runtime-main.5a117edf.js",
+    "static/js/2.909e628f.chunk.js",
     "static/css/main.c954ed45.chunk.css",
-    "static/js/main.2e1d3938.chunk.js"
+    "static/js/main.2e1bebc2.chunk.js"
   ]
 }
