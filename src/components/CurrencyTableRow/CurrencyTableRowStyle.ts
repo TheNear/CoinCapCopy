@@ -1,43 +1,7 @@
-import styled, { keyframes, css } from "styled-components/macro";
+import styled from "styled-components/macro";
 import { device } from "../../styles/breakpoints";
 import { laptopHidden, mobileHiddenL, tabletHidden, ResponseHidden } from "../../styles/media";
-
-// TODO: отрефакторить
-const alertBad = keyframes`
-  0%: {
-    background-color: inherit;
-  }
-
-  50% {
-    background-color: #FFDBDA;
-  }
-
-  100%: {
-    background-color: inherit;
-  }
-`;
-
-const alertGood = keyframes`
-0%: {
-  background-color: inherit;
-}
-
-50% {
-  background-color: #CFF4E8;
-}
-
-100%: {
-  background-color: inherit;
-}
-`;
-
-const goodAnimation = css`
-  animation: ${alertGood} 1.5s ease;
-`;
-
-const badAnimation = css`
-  animation: ${alertBad} 1.5s ease;
-`;
+import { currencyIsDown, currencyIsUp } from "./CurrencyTableAnimation";
 
 interface TableAlignProps {
   align?: "left" | "center" | "right";
@@ -63,9 +27,9 @@ export const CurrencyTableRowWrap = styled.tr<CurrencyTableRowWrapProp>`
       case undefined:
         return "";
       case true:
-        return goodAnimation;
+        return currencyIsUp;
       case false:
-        return badAnimation;
+        return currencyIsDown;
       default:
         return "";
     }

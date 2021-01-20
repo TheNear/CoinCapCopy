@@ -9,6 +9,7 @@ import {
 } from "./CurrencyTableRowStyle";
 import { getParsedData } from "../../helpers/currencyParser";
 import { usePrevious } from "../../hooks/usePrevious";
+import { getChangeStatus } from "./CurrencyTableHelper";
 
 export interface CurrencyTableRowProp {
   data: CurrencyData;
@@ -31,8 +32,10 @@ const CurrencyTableRow: React.FC<CurrencyTableRowProp> = React.memo(
     } = getParsedData(data);
     const prevPrice = usePrevious<string>(data.priceUsd);
     return (
-      // TODO: Вынести логику
-      <CurrencyTableRowWrap changeValue={prevPrice ? +prevPrice < +data.priceUsd : undefined}>
+      <CurrencyTableRowWrap
+        key={price}
+        changeValue={getChangeStatus(+prevPrice, +data.priceUsd)}
+      >
         <CurrencyTableCell align="center" mobileHideL>
           {rank}
         </CurrencyTableCell>

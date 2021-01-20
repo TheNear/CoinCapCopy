@@ -18,6 +18,8 @@ class ApiService {
       baseURL: this.BASE_URL,
       timeout: 1500,
     };
+
+    this.getCurrencyList = this.getCurrencyList.bind(this);
   }
 
   static async get<T>(url: string, options?: AxiosRequestConfig): Promise<T> {
