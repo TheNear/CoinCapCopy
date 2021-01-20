@@ -4,7 +4,7 @@ import { CurrencyRespone } from "./types";
 
 export const test = "32";
 
-class ApiService {
+class FetchService {
   private BASE_URL: string;
 
   private CURRENCY_URL: string
@@ -18,8 +18,6 @@ class ApiService {
       baseURL: this.BASE_URL,
       timeout: 1500,
     };
-
-    this.getCurrencyList = this.getCurrencyList.bind(this);
   }
 
   static async get<T>(url: string, options?: AxiosRequestConfig): Promise<T> {
@@ -27,12 +25,12 @@ class ApiService {
     return data;
   }
 
-  public async getCurrencyList() {
-    const { data } = await ApiService.get<CurrencyRespone>(this.CURRENCY_URL, this.axiosOption);
+  public getCurrencyList = async () => {
+    const { data } = await FetchService.get<CurrencyRespone>(this.CURRENCY_URL, this.axiosOption);
     return data;
   }
 }
 
-const api = new ApiService(URLS);
+const FetchApi = new FetchService(URLS);
 
-export { api };
+export { FetchApi };

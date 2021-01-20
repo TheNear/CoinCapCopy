@@ -1,5 +1,5 @@
 import { ForkEffect, put, select, takeEvery, call } from "redux-saga/effects";
-import { api } from "../../api/services";
+import { FetchApi } from "../../api/fetchService";
 import { CurrencyData } from "../../api/types";
 import { ActionTypes } from "../../types/redux";
 import { setCurrencyData, setMaxPage } from "./action";
@@ -9,7 +9,7 @@ import { CurrencyActionTypes } from "./types";
 // FIXME: Типизировать
 function* fetchCurrencyList() {
   try {
-    const currencyListData: CurrencyData[] = yield call(api.getCurrencyList);
+    const currencyListData: CurrencyData[] = yield call(FetchApi.getCurrencyList);
     const currencyPerPage: number = yield select(getCurrencyCapacity);
     const maxPossiblePages = Math.ceil(currencyListData.length / currencyPerPage);
     yield put<ActionTypes>(setMaxPage(maxPossiblePages));
